@@ -22,8 +22,8 @@ public class Juego {
     
     public boolean comprobarExistencia(String a){
         String[] movimientosPosibles = {"Piedra", "Papel", "Tijera"};
-        a = formatearNombre(a);
         boolean existencia = false;
+        a = formatearNombre(a);
         int i = 0;
         
         while(existencia == false && i < movimientosPosibles.length){
@@ -31,6 +31,7 @@ public class Juego {
                 existencia = true;
             i++;
         }
+        
         return existencia;
     }
     
@@ -51,8 +52,7 @@ public class Juego {
         String[] movimientos = new String[2];
         movimientos = separarMovimientos();
         
-        if(movimientos[0].equals(movimientos[1]))
-            return "Empate";
+        if(movimientos[0].equals(movimientos[1])) return "Empate";
         else return determinarGanador(movimientos);
     }
 }
